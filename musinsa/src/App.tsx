@@ -1,5 +1,11 @@
+import Header from 'components/Header';
+
 function App() {
-  return <div className="App">메인</div>;
+  return (
+    <div>
+      <Header />
+    </div>
+  );
 }
 
 export default App;
