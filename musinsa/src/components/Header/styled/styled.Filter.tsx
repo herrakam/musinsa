@@ -4,7 +4,7 @@ import { mixin } from 'design/globalStyle';
 export const FilterWrap = styled.div<{ isClicked: boolean }>`
   ${mixin.flexbox({ horizontal: 'center', vertical: 'center' })}
   min-width:72px;
-  padding: 7px 15px;
+  padding: 7px 13px;
   height: 35px;
   ${({ theme }) => theme.fontStyles.filter};
   border-radius: 18px;

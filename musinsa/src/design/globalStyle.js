@@ -18,7 +18,6 @@ const GlobalStyles = createGlobalStyle`
         box-sizing:border-box;
         margin:0;
         padding:0;
-        font-family: 'Apple SD Gothic Neo';
         font-style: normal;
 }
 `;
