@@ -1,20 +1,33 @@
+import { filterState } from 'atoms/filter';
 import * as S from 'components/Header/styled/styled.Filter';
 import { useState } from 'react';
+import { useRecoilState } from 'recoil';
 
 type FilterTitle = {
   title: string;
 };
 
 function Filter({ title }: FilterTitle) {
-  const [isclicked, setIsClicked] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
+  const [filters, setFilters] = useRecoilState(filterState);
   const ToggleFilter = () => {
-    setIsClicked(!isclicked);
+    setIsClicked(!isClicked);
+  };
+  const setSelectedFilter = () => {
+    if (!filters.includes(title)) {
+      setFilters([...filters, title]);
+    } else {
+      const removedFilters = [...filters];
+      removedFilters.splice(filters.indexOf(title), 1);
+      setFilters(removedFilters);
+    }
   };
   return (
     <S.FilterWrap
-      isClicked={isclicked}
+      isClicked={isClicked}
       onClick={() => {
         ToggleFilter();
+        setSelectedFilter();
       }}
     >
       {title}
