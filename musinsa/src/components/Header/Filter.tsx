@@ -8,11 +8,8 @@ type FilterTitle = {
 };
 
 function Filter({ title }: FilterTitle) {
-  const [isClicked, setIsClicked] = useState(false);
   const [filters, setFilters] = useRecoilState(filterState);
-  const ToggleFilter = () => {
-    setIsClicked(!isClicked);
-  };
+  const isSelected = filters.includes(title);
   const setSelectedFilter = () => {
     if (!filters.includes(title)) {
       setFilters([...filters, title]);
@@ -24,9 +21,8 @@ function Filter({ title }: FilterTitle) {
   };
   return (
     <S.FilterWrap
-      isClicked={isClicked}
+      isClicked={isSelected}
       onClick={() => {
-        ToggleFilter();
         setSelectedFilter();
       }}
     >

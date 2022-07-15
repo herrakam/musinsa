@@ -20,6 +20,7 @@ function SelectedFilters() {
           const key = keyMaker();
           return (
             <S.SelectedFilter
+              key={key}
               onClick={() => {
                 removeFilter(filter);
               }}
