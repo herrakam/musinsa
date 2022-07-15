@@ -1,9 +1,12 @@
 import * as S from 'components/Header/styled/styled.SearchBar';
 import { ReactComponent as MagnifyGlass } from 'images/Combined_Shape.svg';
 
-function SearchBar() {
+type SearchBarType = {
+  isClicked: boolean;
+};
+function SearchBar({ isClicked }: SearchBarType) {
   return (
-    <S.SearchBarWrap>
+    <S.SearchBarWrap isClicked={isClicked}>
       <S.SearchBar>
         <S.SearchIcon>
           <MagnifyGlass />

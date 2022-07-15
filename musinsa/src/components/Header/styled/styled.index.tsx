@@ -16,3 +16,8 @@ export const Filters = styled.div`
   padding: 10px 7px;
   height: 55px;
 `;
+export const Devide = styled.div`
+  width: 100%;
+  height: 10px;
+  background: ${({ theme }) => theme.backgroundColors.gray3};
+`;

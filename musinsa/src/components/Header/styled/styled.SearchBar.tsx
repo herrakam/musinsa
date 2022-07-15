@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import { mixin } from 'design/globalStyle';
 
-export const SearchBarWrap = styled.div`
+export const SearchBarWrap = styled.div<{ isClicked: boolean }>`
+  display: ${({ isClicked }) => (isClicked ? 'block' : 'none')};
   width: 100%;
   height: 80px;
   padding: 20px 15px;

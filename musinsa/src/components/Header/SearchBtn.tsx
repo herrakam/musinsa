@@ -1,15 +1,17 @@
 import * as S from 'components/Header/styled/styled.SearchBtn';
 import { useState } from 'react';
 import { ReactComponent as MagnifyGlass } from 'images/Combined_Shape.svg';
+import { isBtnClickedState } from 'atoms/isBtnClicked';
+import { useRecoilState } from 'recoil';
 
 function SearchBtn() {
-  const [isClicked, setIsClicked] = useState(false);
+  const [isBtnClicked, setIsBtnClicked] = useRecoilState(isBtnClickedState);
   const toggleBtn = () => {
-    setIsClicked(!isClicked);
+    setIsBtnClicked(!isBtnClicked);
   };
   return (
     <S.SearchBtnWrap
-      isClicked={isClicked}
+      isClicked={isBtnClicked}
       onClick={() => {
         toggleBtn();
       }}
