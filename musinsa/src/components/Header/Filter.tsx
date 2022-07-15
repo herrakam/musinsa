@@ -1,6 +1,5 @@
 import { filterState } from 'atoms/filter';
 import * as S from 'components/Header/styled/styled.Filter';
-import { useState } from 'react';
 import { useRecoilState } from 'recoil';
 
 type FilterTitle = {
@@ -9,7 +8,7 @@ type FilterTitle = {
 
 function Filter({ title }: FilterTitle) {
   const [filters, setFilters] = useRecoilState(filterState);
-  const isSelected = filters.includes(title);
+  const isClicked = filters.includes(title);
   const setSelectedFilter = () => {
     if (!filters.includes(title)) {
       setFilters([...filters, title]);
@@ -21,7 +20,7 @@ function Filter({ title }: FilterTitle) {
   };
   return (
     <S.FilterWrap
-      isClicked={isSelected}
+      isClicked={isClicked}
       onClick={() => {
         setSelectedFilter();
       }}
