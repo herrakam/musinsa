@@ -3,6 +3,7 @@ import { theme } from 'design/theme';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyles from 'design/globalStyle';
 import { RecoilRoot } from 'recoil';
+import Contents from 'components/contents';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <GlobalStyles />
       <RecoilRoot>
         <Header />
+        <Contents />
       </RecoilRoot>
     </ThemeProvider>
   );
