@@ -2,6 +2,7 @@ export const theme = {
   backgroundColors: {
     white: '#FFFFFF',
     gray1: '#EEEEEE',
+    gray2: '#F9F9F9',
     blue1: ' #0078FF',
   },
   fontColors: {
@@ -15,6 +16,10 @@ export const theme = {
     filter: {
       fontWeight: 400,
       fontSize: '14px',
+    },
+    input: {
+      fontWeight: 400,
+      fontSize: '16px',
     },
     label: {
       fontWeight: 400,

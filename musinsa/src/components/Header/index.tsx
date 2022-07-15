@@ -2,6 +2,7 @@ import * as S from 'components/Header/styled/styled.index';
 import { ReactComponent as LogoImg } from 'images/logo_musinsa.svg';
 import { keyMaker } from 'utils/utils';
 import Filter from './Filter';
+import SearchBar from './SearchBar';
 import SearchBtn from './SearchBtn';
 import SelectedFilters from './SelectedFilters';
 
@@ -19,6 +20,7 @@ function Header() {
           return <Filter key={key} title={filter} />;
         })}
       </S.Filters>
+      <SearchBar />
       <SelectedFilters />
     </S.HeaderWrap>
   );

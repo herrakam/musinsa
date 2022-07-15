@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-// import { mixin } from 'design/globalStyle';
 import { FilterWrap } from './styled.Filter';
 
 export const SearchBtnWrap = styled(FilterWrap)<{ isClicked: boolean }>`
