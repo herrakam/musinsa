@@ -1,7 +1,7 @@
 import { filterState } from 'atoms/filter';
 import * as S from 'components/Header/styled/styled.SelectedFilter';
 import { ReactComponent as RefreshImg } from 'images/Refresh.svg';
-import { useRecoilState } from 'recoil';
+import { useRecoilState, useResetRecoilState } from 'recoil';
 import { keyMaker } from 'utils/utils';
 import { ReactComponent as CrossImg } from 'images/Cross.svg';
 
@@ -33,7 +33,7 @@ function SelectedFilters() {
           );
         })}
       </S.filters>
-      <S.Refresh>
+      <S.Refresh onClick={useResetRecoilState(filterState)}>
         <RefreshImg />
       </S.Refresh>
     </S.SlectedFiltersWrap>
