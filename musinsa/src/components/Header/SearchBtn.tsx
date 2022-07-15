@@ -15,7 +15,9 @@ function SearchBtn() {
       }}
     >
       검색
-      <MagnifyGlass />
+      <S.MagnifyFigure>
+        <MagnifyGlass />
+      </S.MagnifyFigure>
     </S.SearchBtnWrap>
   );
 }

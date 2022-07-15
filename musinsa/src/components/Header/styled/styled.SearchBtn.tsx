@@ -9,3 +9,7 @@ export const SearchBtnWrap = styled(FilterWrap)<{ isClicked: boolean }>`
   background: ${({ isClicked, theme }) =>
     isClicked ? `${theme.backgroundColors.blue1}` : `${theme.backgroundColors.white}`};
 `;
+export const MagnifyFigure = styled.figure`
+  width: 18px;
+  height: 18px;
+`;
