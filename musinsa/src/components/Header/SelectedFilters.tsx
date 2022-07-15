@@ -1,12 +1,14 @@
 import { filterState } from 'atoms/filter';
 import * as S from 'components/Header/styled/styled.SelectedFilter';
 import { ReactComponent as RefreshImg } from 'images/Refresh.svg';
-import { useRecoilState, useResetRecoilState } from 'recoil';
+import { useRecoilState, useRecoilValue, useResetRecoilState } from 'recoil';
 import { keyMaker } from 'utils/utils';
 import { ReactComponent as CrossImg } from 'images/Cross.svg';
+import { isFilterClickedState } from 'atoms/isFilterClicked';
 
 function SelectedFilters() {
   const [filters, setFilters] = useRecoilState(filterState);
+  const isFilterClicked = useRecoilValue(isFilterClickedState);
   const removeFilter = (title: string) => {
     const removedFilters = [...filters];
     removedFilters.splice(filters.indexOf(title), 1);
@@ -14,7 +16,7 @@ function SelectedFilters() {
   };
 
   return (
-    <S.SlectedFiltersWrap>
+    <S.SlectedFiltersWrap isClicked={isFilterClicked}>
       <S.filters>
         {filters.map((filter) => {
           const key = keyMaker();

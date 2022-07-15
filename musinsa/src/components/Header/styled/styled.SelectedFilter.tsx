@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 import { mixin } from 'design/globalStyle';
 
-export const SlectedFiltersWrap = styled.div`
+export const SlectedFiltersWrap = styled.div<{ isClicked: boolean }>`
   ${mixin.flexbox({ horizontal: 'space-between', vertical: 'center' })};
+  display: ${({ isClicked }) => (isClicked ? 'flex' : 'none')};
   width: 100%;
   height: 50px;
 `;

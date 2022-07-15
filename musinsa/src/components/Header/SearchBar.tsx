@@ -1,10 +1,10 @@
+import { isBtnClickedState } from 'atoms/isBtnClicked';
 import * as S from 'components/Header/styled/styled.SearchBar';
 import { ReactComponent as MagnifyGlass } from 'images/Combined_Shape.svg';
+import { useRecoilValue } from 'recoil';
 
-type SearchBarType = {
-  isClicked: boolean;
-};
-function SearchBar({ isClicked }: SearchBarType) {
+function SearchBar() {
+  const isClicked = useRecoilValue(isBtnClickedState);
   return (
     <S.SearchBarWrap isClicked={isClicked}>
       <S.SearchBar>
