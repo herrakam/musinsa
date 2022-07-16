@@ -20,5 +20,8 @@ const GlobalStyles = createGlobalStyle`
         padding:0;
         font-style: normal;
 }
+body{
+  width:375px;
+}
 `;
 export default GlobalStyles;
