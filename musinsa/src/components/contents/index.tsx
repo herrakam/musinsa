@@ -13,13 +13,11 @@ function Contents() {
     'https://static.msscdn.net/musinsaUI/homework/data/goods1.json',
   );
 
-  if (status === 'error') <span>데이터를 가져오지 못했습니다</span>;
-
   useEffect(() => {
+    if (status === 'error') <span>데이터를 가져오지 못했습니다</span>;
     if (status === 'loading') <span>Loading...</span>;
     if (status === 'success') setContents(data);
   }, [data, status]);
-  console.log(data);
   return (
     <S.ContentsWrap>
       {contents.map((content) => {

@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-// import { mixin } from 'design/globalStyle';
 
 export const ContentsWrap = styled.div`
 width:100%;

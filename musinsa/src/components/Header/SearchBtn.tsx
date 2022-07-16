@@ -1,5 +1,4 @@
 import * as S from 'components/Header/styled/styled.SearchBtn';
-import { useState } from 'react';
 import { ReactComponent as MagnifyGlass } from 'images/Combined_Shape.svg';
 import { isBtnClickedState } from 'atoms/isBtnClicked';
 import { useRecoilState } from 'recoil';
