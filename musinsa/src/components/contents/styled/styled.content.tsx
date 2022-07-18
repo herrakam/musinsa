@@ -62,9 +62,10 @@ export const DiscountRate = styled.div`
   ${({ theme }) => theme.fontStyles.finalPriceANdSale};
   color: ${({ theme }) => theme.fontColors.red};
 `;
-export const OriginalPrice = styled.div`
+export const OriginalPrice = styled.div<{ isSale: number }>`
   width: 100%;
   ${mixin.flexbox({ horizontal: 'flex-start', vertical: 'center' })};
+  display: ${({ isSale }) => (isSale === 0 ? 'none' : 'flex')};
   height: 12px;
   ${({ theme }) => theme.fontStyles.originPrice};
   color: ${({ theme }) => theme.fontColors.lightGray};

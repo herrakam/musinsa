@@ -10,7 +10,6 @@ function Content({ content }: ContentType) {
   const imageOnErrorHandler = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
     e.currentTarget.src = altImage;
   };
-
   return (
     <S.ContentWrap>
       <S.ContentTop>
@@ -29,7 +28,9 @@ function Content({ content }: ContentType) {
           <S.Price>{content.price.toLocaleString()}원</S.Price>
           <S.DiscountRate>{content.saleRate}%</S.DiscountRate>
         </S.PriceAndDiscount>
-        <S.OriginalPrice>{content.normalPrice}원</S.OriginalPrice>
+        <S.OriginalPrice isSale={content.saleRate}>
+          {content.normalPrice.toLocaleString()}원
+        </S.OriginalPrice>
       </S.ContentInfo>
     </S.ContentWrap>
   );
